@@ -4,7 +4,8 @@ import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 
 @Injectable({
-  providedIn: 'root'
+  //provider metadata, can create or deliver a service
+  providedIn: 'root',
 })
 export class HeroService {
 
