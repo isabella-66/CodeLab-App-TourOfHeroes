@@ -3,7 +3,7 @@
 <ul class="heroes">
     <!-- <li> - host element, heroes - holds the mock heroes list, hero - olds the current hero object for each interation through the list -->
     <li *ngFor="let hero of heroes">
-        <button type="button" (click)="onSelect(hero)">
+        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
             <span class="badge">{{ hero.id }}</span>
             <span class="name">{{ hero.name }}</span>
         </button>
@@ -11,11 +11,12 @@
 </ul>
 
 
-<h2>{{ hero.name | uppercase }} Details</h2>
-<p><span>id:</span> {{ hero.id }}</p>
-
-<!-- edit the hero -->
-<div>
-    <label for="name">Hero name:</label>
-    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+<div *ngIf="selectedHero">
+    <h2>{{ selectedHero.name | uppercase }} Details</h2>
+    <div>id: {{ selectedHero.id }}</div>
+    <!-- edit the hero -->
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="hero-name">
+    </div>
 </div>
