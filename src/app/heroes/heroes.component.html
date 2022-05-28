@@ -1,6 +1,7 @@
 <!-- showing the hero -->
 <h2>My Heroes</h2>
 <ul class="heroes">
+    <!-- <li> - host element, heroes - holds the mock heroes list, hero - olds the current hero object for each interation through the list -->
     <li *ngFor="let hero of heroes">
         <button type="button">
             <span class="badge">{{ hero.id }}</span>
