@@ -36,10 +36,11 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero> {
-    const hero = HEROES.find(h => h.id === id)!;
-    this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(hero);
-    /* throw new Error('Method not implemented.'); */
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`fetched hero id=${id}`)), 
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
 
   /* @param operation - name of the operation that failed
