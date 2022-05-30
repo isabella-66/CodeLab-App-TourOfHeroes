@@ -1,5 +1,15 @@
 # AngularTourOfHeroes
 
+Course "Tour Of Heroes", from the Angular website, teaching how to use this web application platform. The TypeScript, HTML and CSS languages were used.
+
+
+## Codification
+The CRUD was carried out for registration and, also, a component for conducting research.
+
+## Objective
+To set up an application for the registration of heroes, with the top 5 on the homepage and messages confirming the actions taken.
+
+## Technical information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
 ## Development server
