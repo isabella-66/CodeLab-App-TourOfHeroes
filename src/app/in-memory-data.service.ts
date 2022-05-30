@@ -19,7 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Martin Luther King Jr' },
       { id: 20, name: 'Malala Yousafzai' }
     ];
-    return heroes;
+    return {heroes};
   }
 
   /* ensure that a hero always has an id */
